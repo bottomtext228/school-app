@@ -1,3 +1,4 @@
+import React from "react";
 import { tasks } from "../../data/Tasks";
 
 export interface TaskWindowProps {
@@ -24,12 +25,18 @@ export function ShowTaskWindow({ currentDocId, shouldRenderSolution, setSolution
                     <br></br>
                     <button onClick={onShowSolutionClick}>{shouldRenderSolution ? 'Скрыть решение' : 'Показать решение'} </button>
                     <br></br>
-                    {shouldRenderSolution ? <span>{`Решение: \n${currentDoc.solution}`}</span> : null }
-                      
-                    
+                    {shouldRenderSolution ?
+                        <React.Fragment> 
+                            <span><strong>{`Решение: `}</strong>{`${currentDoc.solution}`}</span>
+                            <br></br>
+                            <span><strong>{`Ответ: ${currentDoc.answer}`}</strong></span>
+                        </React.Fragment>  
+                        : null
+                    }
+                
                 </div>
             </div>
-        </div>
+        </div >
     )
 
 }

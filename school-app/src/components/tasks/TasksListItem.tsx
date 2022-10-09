@@ -11,7 +11,7 @@ export function TasksListItem(listItem: TaskProps, setCurrentDocId: Function, se
 
     return (
         <li>        
-            <button onClick = {onTaskListItemClick}>{"Задание " + listItem.name}</button>
+            <button  className="button" onClick = {onTaskListItemClick}>{"Задание " + listItem.name}</button>
         </li>
     )
 }
